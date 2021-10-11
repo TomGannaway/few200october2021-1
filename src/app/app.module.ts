@@ -12,6 +12,7 @@ import { reducers } from './reducers';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { StatusBarComponent } from './components/status-bar/status-bar.component
     CounterComponent,
     NavbarComponent,
     HomeComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    UserSettingsComponent
   ],
   imports: [
     BrowserModule,
