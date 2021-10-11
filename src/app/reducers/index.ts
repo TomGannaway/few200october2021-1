@@ -1,4 +1,4 @@
-import { ActionReducerMap } from '@ngrx/store';
+import { ActionReducerMap, createSelector } from '@ngrx/store';
 import * as fromCounter from './counter.reducer';
 
 export interface AppState {
@@ -13,11 +13,16 @@ export const reducers: ActionReducerMap<AppState> = {
 
 // Selector Functions - just write functions that return the state your components and stuff need.
 
+// Selector per "branch" of your application state.
+const selectCounterBranch = (state: AppState) => state.counter;
 
-export function selectCounterCurrent(state: AppState) {
-  return state.counter.current;
-}
 
-export function selectResetDisabled(state: AppState): boolean {
-  return state.counter.current === 0;
-}
+export const selectCounterCurrent = createSelector(
+  selectCounterBranch,
+  b => b.current
+)
+
+export const selectResetDisabled = createSelector(
+  selectCounterCurrent,
+  c => c === 0
+)
