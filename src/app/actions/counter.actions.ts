@@ -10,7 +10,9 @@ export const countDecremented = createAction(
   '[counter] count decremented'
 )
 
-
+export const countReset = createAction(
+  '[counter] count reset'
+)
 
 
 
