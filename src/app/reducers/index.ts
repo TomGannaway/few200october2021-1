@@ -9,3 +9,15 @@ export interface AppState {
 export const reducers: ActionReducerMap<AppState> = {
   counter: fromCounter.reducer
 }
+
+
+// Selector Functions - just write functions that return the state your components and stuff need.
+
+
+export function selectCounterCurrent(state: AppState) {
+  return state.counter.current;
+}
+
+export function selectResetDisabled(state: AppState): boolean {
+  return state.counter.current === 0;
+}

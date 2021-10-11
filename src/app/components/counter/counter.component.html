@@ -11,6 +11,7 @@
 </div>
 <div>
   <button (click)="reset()"
+          [disabled]="resetDisabled$ | async"
           class="btn btn-danger">
     Reset
   </button>
