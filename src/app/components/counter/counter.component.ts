@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/reducers';
-
+import * as actions from '../../actions/counter.actions';
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
@@ -14,18 +14,17 @@ export class CounterComponent implements OnInit {
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+    // TODO: Inappropriate Intimacy
     this.current$ = this.store.select(s => s.counter.current);
   }
 
   increment() {
-    const whatJustHappened = {
-      type: 'incremented count'
-    };
-    this.store.dispatch(whatJustHappened);
+
+    this.store.dispatch(actions.countIncremented());
   }
 
   decrement() {
-    this.store.dispatch({ type: 'decremented count' })
+    this.store.dispatch(actions.countDecremented());
   }
 
 }

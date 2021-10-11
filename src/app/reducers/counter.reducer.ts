@@ -1,4 +1,5 @@
-import { Action } from "@ngrx/store";
+import { Action, on, createReducer } from "@ngrx/store";
+import * as actions from '../actions/counter.actions';
 
 // Describe it for TypeScript
 export interface CounterState {
@@ -10,18 +11,15 @@ const initialState: CounterState = {
   current: 0
 }
 
+
+const reducerFunction = createReducer(
+  initialState,
+  on(actions.countIncremented, (s) => ({ ...s, current: s.current + 1 })),
+  on(actions.countDecremented, (s) => ({ ...s, current: s.current - 1 }))
+)
+
 export function reducer(state: CounterState = initialState, action: Action): CounterState {
-  switch (action.type) {
-    case 'incremented count': {
-      return { ...state, current: state.current + 1 }
-    }
-    case 'decremented count': {
-      return { ...state, current: state.current - 1 }
-    }
-    default: {
-      return state;
-    }
-  }
+  return reducerFunction(state, action);
 }
 
 
