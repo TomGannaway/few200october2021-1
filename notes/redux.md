@@ -94,6 +94,9 @@ export function reducer(state: CounterState = initialState, action: Action): Cou
 }
 
 ```
+
+Reducer functions must be *pure functions* - the output has to be dependent on the input. No API calls, nothing like that. (We do that in Effects)
+
 ### Entity Set Reducers
 
 TODO: More on this when we create some.
