@@ -1,6 +1,6 @@
 # Common Commands for Angular CLI
 
-To get a new terminal window in VS Code, hit ctrl+backtick (the button under the f1, above the tab).
+To get a new terminal window in VS Code, hit `` Ctrl+` `` (the button under the f1, above the tab).
 
 ## Running your Angular Application To Do Development
 
