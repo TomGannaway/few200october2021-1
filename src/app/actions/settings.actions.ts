@@ -9,9 +9,13 @@ import { createAction, props } from '@ngrx/store';
  */
 
 
-// "Eveents" - usually no data, just saying something happened (applicationStarted, counterReset)
+// "Events" - usually no data, just saying something happened (applicationStarted, counterReset)
 // "Command" -- I need SOMETHING to do something about this.
 
+
+export const getSavedGoal = createAction(
+  '[settings] get saved goal'
+);
 
 export const countGoalChanged = createAction(
   '[settings] count goal changed',

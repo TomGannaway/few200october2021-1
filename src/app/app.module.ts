@@ -16,6 +16,7 @@ import { UserSettingsComponent } from './components/user-settings/user-settings.
 import { SsnMaskPipe } from './pipes/ssn.pipe';
 import { EffectsModule } from '@ngrx/effects';
 import { SettingsEffects } from './effects/settings.effects';
+import { AppEffects } from './effects/app.effects';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { SettingsEffects } from './effects/settings.effects';
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({}),
-    EffectsModule.forRoot([SettingsEffects])
+    EffectsModule.forRoot([SettingsEffects, AppEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
