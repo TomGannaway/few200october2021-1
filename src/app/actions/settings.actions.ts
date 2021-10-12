@@ -8,7 +8,19 @@ import { createAction, props } from '@ngrx/store';
  * }
  */
 
+
+// "Eveents" - usually no data, just saying something happened (applicationStarted, counterReset)
+// "Command" -- I need SOMETHING to do something about this.
+
+
 export const countGoalChanged = createAction(
   '[settings] count goal changed',
-  props<{ newGoal: number }>()
+  props<{ payload: number }>()
 )
+
+// "Document" -- A representation of some data
+
+export const countGoal = createAction(
+  '[settings] count goal',
+  props<{ payload: number }>()
+);

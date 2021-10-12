@@ -20,7 +20,7 @@ export class UserSettingsComponent implements OnInit {
   goalChanged(goalElement: HTMLInputElement) {
 
     const newGoal = goalElement.valueAsNumber;
-    this.store.dispatch(actions.countGoalChanged({ newGoal }));
+    this.store.dispatch(actions.countGoalChanged({ payload: newGoal }));
     goalElement.value = '';
     goalElement.focus();
   }
