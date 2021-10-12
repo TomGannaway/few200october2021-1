@@ -17,6 +17,7 @@ import { SsnMaskPipe } from './pipes/ssn.pipe';
 import { EffectsModule } from '@ngrx/effects';
 import { SettingsEffects } from './effects/settings.effects';
 import { AppEffects } from './effects/app.effects';
+import { SupportModule } from 'dist/few200/features/support/support.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AppEffects } from './effects/app.effects';
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({}),
-    EffectsModule.forRoot([SettingsEffects, AppEffects])
+    EffectsModule.forRoot([SettingsEffects, AppEffects]),
+    SupportModule
   ],
   providers: [],
   bootstrap: [AppComponent]
