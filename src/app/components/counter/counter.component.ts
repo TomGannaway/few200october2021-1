@@ -12,7 +12,9 @@ export class CounterComponent implements OnInit {
 
   current$!: Observable<number>;
   resetDisabled$!: Observable<boolean>;
-  constructor(private store: Store<AppState>) { }
+  constructor(
+    private store: Store<AppState>,
+  ) { }
 
   ngOnInit(): void {
     // TODO: Inappropriate Intimacy

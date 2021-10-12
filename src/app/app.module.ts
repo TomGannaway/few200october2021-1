@@ -13,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
+import { SsnMaskPipe } from './pipes/ssn.pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { UserSettingsComponent } from './components/user-settings/user-settings.
     NavbarComponent,
     HomeComponent,
     StatusBarComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    SsnMaskPipe
   ],
   imports: [
     BrowserModule,
